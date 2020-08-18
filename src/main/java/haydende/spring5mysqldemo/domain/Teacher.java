@@ -1,5 +1,6 @@
 package haydende.spring5mysqldemo.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,6 +11,7 @@ import javax.persistence.*;
 @Entity
 @Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class Teacher {
 
     @Id
