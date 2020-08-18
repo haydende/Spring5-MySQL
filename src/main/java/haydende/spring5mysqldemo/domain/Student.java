@@ -1,12 +1,16 @@
 package haydende.spring5mysqldemo.domain;
 
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Data
 @Entity
+@Builder
+@NoArgsConstructor
 public class Student {
 
     @Id
