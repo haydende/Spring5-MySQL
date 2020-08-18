@@ -14,7 +14,7 @@ public interface SubjectService {
 
     List<Subject> save(Subject... subjects);
 
-    void delete(Subject subject);
+    void delete(Subject... subject);
 
     void deleteByName(String name);
 
