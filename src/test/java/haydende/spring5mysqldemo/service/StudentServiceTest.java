@@ -14,7 +14,8 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.ArgumentMatchers.*;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyLong;
 
 class StudentServiceTest {
 
@@ -77,21 +78,16 @@ class StudentServiceTest {
 
     @Test
     void testSave() {
-        List<Student> students = Arrays.asList(
-            Student.builder().build(),
-            Student.builder().build()
-        );
-
         BDDMockito
-            .given(studentRepository.saveAll(anyIterable()))
-            .willReturn(students);
+            .given(studentRepository.save(any(Student.class)))
+            .willReturn(Student.builder().build());
 
         List<Student> actualStudents = studentService.save(
             Student.builder().build(),
-            Student.builder().build()
-        );
+            Student.builder().build());
 
         assertEquals(2, actualStudents.size());
+        BDDMockito.verify(studentRepository, Mockito.times(2)).save(any(Student.class));
     }
 
     @Test

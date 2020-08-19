@@ -14,7 +14,8 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.ArgumentMatchers.*;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
 
 class SubjectServiceTest {
 
@@ -74,17 +75,15 @@ class SubjectServiceTest {
     @Test
     void testSave() {
         BDDMockito
-            .given(subjectRepository.saveAll(anyIterable()))
-            .willReturn(
-                Arrays.asList(
-                    Subject.builder().build(),
-                    Subject.builder().build()));
+            .given(subjectRepository.save(any(Subject.class)))
+            .willReturn(Subject.builder().build());
 
         List<Subject> actualSubjects = subjectService.save(
             Subject.builder().build(),
             Subject.builder().build());
 
         assertEquals(2, actualSubjects.size());
+        BDDMockito.verify(subjectRepository, Mockito.times(2)).save(any(Subject.class));
     }
 
     @Test
