@@ -14,7 +14,7 @@ public interface TeacherService {
 
     List<Teacher> save(Teacher... teachers);
 
-    void delete(Teacher teacher);
+    void delete(Teacher... teacher);
 
     void deleteById(Long id);
 
