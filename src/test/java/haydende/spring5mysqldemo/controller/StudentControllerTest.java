@@ -1,6 +1,5 @@
 package haydende.spring5mysqldemo.controller;
 
-import haydende.spring5mysqldemo.controllers.StudentController;
 import haydende.spring5mysqldemo.domain.Student;
 import haydende.spring5mysqldemo.service.StudentService;
 import org.junit.jupiter.api.BeforeEach;

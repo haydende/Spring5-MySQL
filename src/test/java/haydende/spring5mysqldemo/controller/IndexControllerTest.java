@@ -1,6 +1,5 @@
 package haydende.spring5mysqldemo.controller;
 
-import haydende.spring5mysqldemo.controllers.IndexController;
 import haydende.spring5mysqldemo.domain.Student;
 import haydende.spring5mysqldemo.domain.Subject;
 import haydende.spring5mysqldemo.domain.Teacher;

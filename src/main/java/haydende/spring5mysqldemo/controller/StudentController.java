@@ -1,4 +1,4 @@
-package haydende.spring5mysqldemo.controllers;
+package haydende.spring5mysqldemo.controller;
 
 import haydende.spring5mysqldemo.service.StudentService;
 import lombok.extern.slf4j.Slf4j;
